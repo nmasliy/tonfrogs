@@ -1,0 +1,232 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  color: #fff;
+  background-color: #010101;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1215px;
+}
+
+.main__title {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 78px;
+}
+.main__title span {
+  background: linear-gradient(90deg, #0085ff 0%, #61c5ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.main__text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+.navigation ul {
+  display: flex;
+  margin: 0 -28px;
+}
+.navigation li {
+  margin: 0 28px;
+  font-weight: 600;
+}
+
+.page-wrapper {
+  position: relative;
+}
+.page-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 933px;
+  height: 984px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -580px;
+  background: #cdcdcd;
+  opacity: 0.2;
+  filter: blur(170px);
+}
+
+.header {
+  padding: 10px 0;
+  background: rgba(34, 35, 37, 0.2);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header__languages {
+  margin-left: 80px;
+}
+.header__languages ul {
+  display: flex;
+  margin: 0 -8px;
+}
+.header__languages li {
+  margin: 0 8px;
+  font-weight: 600;
+}
+.header__languages li.active {
+  opacity: 0.6;
+}
+.header__socials {
+  margin-left: 60px;
+}
+.header__socials ul {
+  display: flex;
+  margin: 0 -10px;
+}
+.header__socials li {
+  margin: 0 10px;
+}
+.header__socials a {
+  display: flex;
+}
+.header__burger {
+  display: none;
+  margin-right: 0;
+}
+.header__burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 6px;
+}
+.header__burger span:last-child {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 1024px) {
+  .header__burger {
+    display: block;
+  }
+}
+
+.hero {
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 431px;
+  height: 454px;
+  left: -207px;
+  top: 353px;
+  background: #cdcdcd;
+  opacity: 0.2;
+  filter: blur(170px);
+}
+.hero__inner {
+  padding-top: 115px;
+  padding-bottom: 500px;
+  position: relative;
+}
+.hero__row {
+  display: flex;
+}
+.hero__title {
+  margin-bottom: 45px;
+}
+.hero__text {
+  max-width: 506px;
+  margin-bottom: 95px;
+}
+.hero__media {
+  margin-left: 55px;
+  margin-top: 50px;
+}
+.hero__media-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 13px;
+  width: 371px;
+  height: 517px;
+  background: url("../img/card-border.svg") center no-repeat;
+}
+.hero__media-item--silver {
+  background-image: url("../img/card-silver.svg");
+  width: 373px;
+  height: 520px;
+  position: absolute;
+  right: 400px;
+  top: 579px;
+  transform: rotate(-15deg);
+}
+.hero__media-item--gold {
+  background-image: url("../img/card-gold.svg");
+}
+.hero__media-item--platinum {
+  position: absolute;
+  right: -150px;
+  top: 0;
+  height: 516px;
+  width: 369px;
+  background-image: url("../img/card-platinum.svg");
+  transform: rotate(15deg);
+}
+.hero__media-body {
+  border-radius: 13px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+.hero__media-footer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(8, 18, 26, 0.8);
+  border-radius: 13px;
+  padding: 18px 33px;
+  border: 3px solid #0085ff;
+  margin-top: auto;
+}
+.hero__media-name {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 19px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.hero__media-icon {
+  margin-left: 20px;
+}/*# sourceMappingURL=style.css.map */
