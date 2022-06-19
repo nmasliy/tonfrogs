@@ -118,5 +118,7 @@ window.addEventListener("DOMContentLoaded", function () {
   initCounter();
   const da = new DynamicAdapt("max");
   da.init();
-
+  AOS.init({
+    duration:1000
+  });
 });

@@ -14,7 +14,194 @@
       href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Mulish:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css" />
+    <!-- Critical CSS -->
+    <style>
+      .header {
+  padding: 10px 0;
+  background: rgba(34, 35, 37, 0.2);
+  backdrop-filter: blur(25px);
+  position: relative;
+  z-index: 4;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header__languages {
+  margin-left: 80px;
+}
+.header__languages ul {
+  display: flex;
+  margin: 0 -8px;
+}
+.header__languages li {
+  margin: 0 8px;
+  font-weight: 600;
+}
+.header__languages li.active {
+  opacity: 0.6;
+}
+.header__socials {
+  margin-left: 60px;
+}
+.header__burger {
+  display: none;
+  margin-left: 55px;
+}
+.header__burger span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #f8f8f8;
+  margin-bottom: 6px;
+}
+.header__burger span:last-child {
+  margin-bottom: 0;
+}
+.header__menu-close {
+  display: none;
+}
+.hero {
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 431px;
+  height: 454px;
+  left: -207px;
+  top: 353px;
+  background: #cdcdcd;
+  opacity: 0.2;
+  filter: blur(170px);
+}
+.hero__caption {
+  margin-bottom: 22px;
+}
+.hero__inner {
+  padding-top: 115px;
+  padding-bottom: 500px;
+  position: relative;
+}
+.hero__row {
+  display: flex;
+}
+.hero__title {
+  margin-bottom: 45px;
+}
+.hero__text {
+  max-width: 506px;
+  margin-bottom: 95px;
+}
+.hero__btn {
+  background: #ffffff;
+  box-shadow: 0px 0px 50px #0085ff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 30px;
+  text-align: center;
+  color: #010101;
+  width: 280px;
+  position: relative;
+  z-index: 4;
+}
+.hero__btn img {
+  flex-shrink: 0;
+  margin-right: 6px;
+}
+.hero__media {
+  margin-left: 120px;
+}
+.hero__media-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 13px;
+  width: 371px;
+  height: 517px;
+  background: url("img/card-border.svg") center no-repeat;
+  backdrop-filter: blur(4px);
+}
+.hero__media-item--silver {
+  background-image: url("img/card-silver.svg");
+  width: 373px;
+  height: 520px;
+  position: absolute;
+  right: 185px;
+  top: 160px;
+  transform: rotate(0);
+}
+.hero__media-item--gold {
+  background-image: url("img/card-gold.svg");
+  z-index: 3;
+  position: relative;
+}
+.hero__media-item--gold::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 379px;
+  height: 350px;
+  background: url("img/diamond-bg-2.svg") center no-repeat;
+  z-index: -1;
+  filter: blur(12px);
+}
+.hero__media-item--platinum {
+  position: absolute;
+  height: 516px;
+  width: 369px;
+  background-image: url("img/card-platinum.svg");
+  right: 185px;
+  top: 160px;
+  transform: rotate(0);
+  transition: 1s ease;
+}
+.hero__media-item--platinum .hero__media-body video {
+  z-index: 3;
+}
+.hero__media-body video {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  z-index: 5;
+  max-width: none;
+}
+.hero__media-footer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(8, 18, 26, 0.7);
+  border-radius: 13px;
+  padding: 18px 33px;
+  border: 3px solid #0085ff;
+  margin-top: auto;
+}
+.hero__media-name {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 19px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.hero__media-icon {
+  margin-left: 20px;
+}
+
+    </style>
+    <!-- /Critical CSS -->
     <title>Tonfrog</title>
   </head>
   <body>
@@ -77,7 +264,7 @@
             </div>
             <div class="hero__row">
               <div class="hero__content">
-                <h1 class="hero__title main__title">
+                <h1 class="hero__title main__title" data-aos="flip-left">
                   Welcome to <br />
                   <span>TON Frogs</span>
                 </h1>
@@ -105,7 +292,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="hero__media-item hero__media-item--silver">
+                <div class="hero__media-item hero__media-item--silver" data-aos="frog-left" data-aos-delay="300">
                   <div class="hero__media-body">
                     <video width="600" poster="img/frog-1.webp" autoplay muted loop>
                       <source src="video/superfrog_600_safari.mp4" type="video/mp4; codecs='hvc1'">
@@ -119,7 +306,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="hero__media-item hero__media-item--platinum">
+                <div class="hero__media-item hero__media-item--platinum" data-aos="frog-right" data-aos-delay="300">
                   <div class="hero__media-body">
                     <video width="600" poster="img/starwars.webp" autoplay muted loop>
                       <source src="video/starwars_600_safari.mp4" type="video/mp4; codecs='hvc1'">
@@ -142,7 +329,7 @@
         <div class="container">
           <div class="about__inner">
             <div class="about__head">
-              <h1 class="about__title main__title">
+              <h1 class="about__title main__title" data-aos="flip-left">
                 What is <br />
                 <span>TON Frogs</span>
               </h1>
@@ -161,7 +348,7 @@
               <div class="about__crystall about__crystall--2"><img src="img/crystall-2.png" alt="crystall"></div>
               <div class="about__crystall about__crystall--3"><img src="img/crystall-3.png" alt="crystall"></div>
               <div class="about__crystall about__crystall--4"><img src="img/crystall-4.png" alt="crystall"></div>
-              <div class="about__media">
+              <div class="about__media" data-aos="scale-before">
                 <video
                   width="920"
                   src="video/faraon_600_chrome.webm"
@@ -182,10 +369,10 @@
       <section class="integrations" id="integrations">
         <div class="container">
           <div class="integrations__inner">
-            <h1 class="integrations__title main__title">
+            <h1 class="integrations__title main__title" data-aos="flip-left">
               <span>integrations</span>
             </h1>
-            <div class="integrations__content">
+            <div class="integrations__content" data-aos="up-before">
               <div class="integrations__buttons">
                 <a href="#" class="integrations__btn">
                   <img src="img/website.svg" alt="" />
@@ -211,18 +398,18 @@
       <section class="roadmap" id="roadmap">
         <div class="container">
           <div class="roadmap__inner">
-            <h1 class="roadmap__title main__title">
+            <h1 class="roadmap__title main__title" data-aos="flip-left">
               <span>roadmap</span>
             </h1>
             <div class="roadmap__boxes">
               <div class="roadmap__box">
-                <div class="roadmap__box-title">q2</div>
+                <div class="roadmap__box-title" data-aos="fade-down">q2</div>
                 <ul>
-                  <li>Creation of a 3D collection of 5555 NFTs</li>
-                  <li>Launch of Social Media</li>
-                  <li>Starting a PR company</li>
-                  <li>Launch of the first version of the site</li>
-                  <li>First presale</li>
+                  <li data-aos="fade-down" data-aos-delay="100">Creation of a 3D collection of 5555 NFTs</li>
+                  <li data-aos="fade-down" data-aos-delay="200">Launch of Social Media</li>
+                  <li data-aos="fade-down" data-aos-delay="300">Starting a PR company</li>
+                  <li data-aos="fade-down" data-aos-delay="400">Launch of the first version of the site</li>
+                  <li data-aos="fade-down" data-aos-delay="500">First presale</li>
                 </ul>
               </div>
               <div class="roadmap__box">
@@ -231,12 +418,12 @@
                   <li>
                     Collaboration with top collections on the TON Blockchain
                   </li>
-                  <li>Lottery of some cool prizes</li>
-                  <li>Marketing campaign</li>
-                  <li>Second presale</li>
-                  <li>Minting and collection launch</li>
-                  <li>Launch of the main version of the site</li>
-                  <li>
+                  <li data-aos="fade-down" data-aos-delay="250">Lottery of some cool prizes</li>
+                  <li data-aos="fade-down" data-aos-delay="300">Marketing campaign</li>
+                  <li data-aos="fade-down" data-aos-delay="350">Second presale</li>
+                  <li data-aos="fade-down" data-aos-delay="450">Minting and collection launch</li>
+                  <li data-aos="fade-down" data-aos-delay="550">Launch of the main version of the site</li>
+                  <li data-aos="fade-down" data-aos-delay="650">
                     Launching a merchandise store and distributing it to
                     owners of rare TON Frogs
                   </li>
@@ -245,10 +432,10 @@
               <div class="roadmap__box">
                 <div class="roadmap__box-title">q4</div>
                 <ul>
-                  <li>Stickers</li>
-                  <li>Printing real 3D TON Frog figures</li>
-                  <li>Сartoons</li>
-                  <li>TON Frogs cash back</li>
+                  <li data-aos="fade-down" data-aos-delay="300">Stickers</li>
+                  <li data-aos="fade-down" data-aos-delay="400">Printing real 3D TON Frog figures</li>
+                  <li data-aos="fade-down" data-aos-delay="500">Сartoons</li>
+                  <li data-aos="fade-down" data-aos-delay="600">TON Frogs cash back</li>
                 </ul>
               </div>
             </div>
@@ -258,10 +445,10 @@
       <section class="team" id="team">
         <div class="container">
           <div class="team__inner">
-            <h1 class="team__title main__title">
+            <h1 class="team__title main__title" data-aos="flip-left">
               <span>team</span>
             </h1>
-            <div class="team__list">
+            <div class="team__list" data-aos="scale-before">
               <div class="team__row">
                 <div class="team__item">
                   <div class="team__item-body">
@@ -400,6 +587,7 @@
         </div>
       </footer>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/dynamicAdapt.js"></script>
     <script src="js/main.js"></script>
   </body>

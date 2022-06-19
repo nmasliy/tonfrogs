@@ -30,6 +30,54 @@ body {
   overflow-x: hidden;
 }
 
+[data-aos="frog-left"] {
+  right: 185px;
+  top: 160px;
+  transform: rotate(0);
+  transition: 1s ease;
+  &.aos-animate {
+    right: 380px;
+    top: 515px;
+    transform: rotate(-15deg);
+  }
+}
+
+[data-aos="frog-right"] {
+  right: 185px;
+  top: 160px;
+  transform: rotate(0);
+  transition: 1s ease;
+  &.aos-animate {
+    right: -150px;
+    top: 100px;
+    transform: rotate(15deg);
+  }
+}
+
+[data-aos="scale-before"] {
+  &::before {
+    transform: scale(0.2) translate(-50%, -50%);
+    transition-property: transform;
+  }
+  &.aos-animate {
+    &::before {
+      transform: translateY(-50%, -50%);
+    }
+  }
+}
+
+[data-aos="up-before"] {
+  &::before {
+    transform: translateY(20%);
+    transition-property: transform;
+  }
+  &.aos-animate {
+    &::before {
+      transform: translateY(0);
+    }
+  }
+}
+
 .overflow-hidden {
   overflow: hidden;
   body {
@@ -111,224 +159,6 @@ body {
   }
 }
 
-.header {
-  padding: 10px 0;
-  background: rgba(#222325, 0.2);
-  backdrop-filter: blur(25px);
-  position: relative;
-  z-index: 4;
-
-  // .header__inner
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  // .header__languages
-  &__languages {
-    margin-left: 80px;
-    ul {
-      display: flex;
-      margin: 0 -8px;
-    }
-    li {
-      margin: 0 8px;
-      font-weight: 600;
-      &.active {
-        opacity: 0.6;
-      }
-    }
-  }
-
-  // .header__socials
-  &__socials {
-    margin-left: 60px;
-  }
-
-  // .header__burger
-  &__burger {
-    display: none;
-    margin-left: 55px;
-    span {
-      display: block;
-      width: 30px;
-      height: 2px;
-      background-color: #f8f8f8;
-      margin-bottom: 6px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  &__menu-close {
-    display: none;
-  }
-}
-
-.hero {
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 431px;
-    height: 454px;
-    left: -207px;
-    top: 353px;
-    background: #cdcdcd;
-    opacity: 0.2;
-    filter: blur(170px);
-  }
-
-  // .hero__caption
-  &__caption {
-    margin-bottom: 22px;
-  }
-
-  // .hero__inner
-  &__inner {
-    padding-top: 115px;
-    padding-bottom: 500px;
-    position: relative;
-  }
-
-  // .hero__row
-  &__row {
-    display: flex;
-  }
-
-  // .hero__title
-  &__title {
-    margin-bottom: 45px;
-  }
-
-  // .hero__text
-  &__text {
-    max-width: 506px;
-    margin-bottom: 95px;
-  }
-
-  // .hero__btn
-  &__btn {
-    background: #ffffff;
-    box-shadow: 0px 0px 50px #0085ff;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 17px 30px;
-    text-align: center;
-    color: #010101;
-    width: 280px;
-    position: relative;
-    z-index: 4;
-    img {
-      flex-shrink: 0;
-      margin-right: 6px;
-    }
-  }
-
-  // .hero__media
-  &__media {
-    margin-left: 120px;
-  }
-
-  // .hero__media-item
-  &__media-item {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border-radius: 13px;
-    width: 371px;
-    height: 517px;
-    background: url("../img/card-border.svg") center no-repeat;
-    backdrop-filter: blur(4px);
-
-    &--silver {
-      background-image: url("../img/card-silver.svg");
-      width: 373px;
-      height: 520px;
-      position: absolute;
-      right: 380px;
-      top: 515px;
-      transform: rotate(-15deg);
-    }
-    &--gold {
-      background-image: url("../img/card-gold.svg");
-      z-index: 3;
-      position: relative;
-      &::before {
-        position: absolute;
-        content: "";
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 379px;
-        height: 350px;
-        background: url("../img/diamond-bg-2.svg") center no-repeat;
-        z-index: -1;
-        filter: blur(12px);
-      }
-    }
-    &--platinum {
-      position: absolute;
-      right: -150px;
-      top: 100px;
-      height: 516px;
-      width: 369px;
-      background-image: url("../img/card-platinum.svg");
-      transform: rotate(15deg);
-      .hero__media-body video {
-        z-index: 3;
-      }
-    }
-  }
-
-  // .hero__media-body
-  &__media-body {
-    video {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 30px;
-      z-index: 5;
-      max-width: none;
-    }
-  }
-
-  // .hero__media-footer
-  &__media-footer {
-    position: relative;
-    z-index: 4;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(#08121a, 0.7);
-    border-radius: 13px;
-    padding: 18px 33px;
-    border: 3px solid #0085ff;
-    margin-top: auto;
-  }
-
-  // .hero__media-name
-  &__media-name {
-    font-family: "Dela Gothic One", sans-serif;
-    font-size: 19px;
-    line-height: 1.3;
-    text-transform: uppercase;
-  }
-
-  // .hero__media-icon
-  &__media-icon {
-    margin-left: 20px;
-  }
-}
 
 .about {
 
@@ -382,10 +212,11 @@ body {
       height: 1632px;
       left: 50%;
       top: calc(50% + 65px);
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(0.5);
       background: url("../img/about-bg.svg") center no-repeat;
       border-radius: 50%;
       z-index: -1;
+      transition: 1s ease;
     }
     video {
       width: 920px;
@@ -487,6 +318,12 @@ body {
       right: 0;
       margin: 0 auto;
       top: 130px;
+      transform: translateY(150px);
+      transition: .7s ease;
+    }
+    transition: .65s ease;
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -605,6 +442,10 @@ body {
     background: #08121a;
     box-shadow: 0px -2px 12px 9px rgba(255, 255, 255, 0.18);
     border-radius: 18px;
+    transition: 1.7s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
     &:nth-child(2) {
       margin-top: 90px;
       grid-area: box-2;
@@ -659,10 +500,11 @@ body {
       height: 1632px;
       left: 50%;
       top: calc(50% - 63px);
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(0.5);
       background: url("../img/about-bg.svg") center no-repeat;
       border-radius: 50%;
       z-index: -1;
+      transition: 1s ease;
     }
     &::after {
       position: absolute;
