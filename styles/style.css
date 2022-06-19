@@ -130,7 +130,7 @@ body {
   display: block;
   width: 30px;
   height: 2px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   margin-bottom: 6px;
 }
 .header__burger span:last-child {
@@ -273,9 +273,6 @@ body {
   margin-left: 20px;
 }
 
-.about {
-  padding-bottom: 170px;
-}
 .about__inner {
   position: relative;
 }
@@ -288,6 +285,8 @@ body {
   max-width: 410px;
   font-weight: 300;
   line-height: 1.5;
+  justify-self: flex-end;
+  margin-right: 110px;
   color: rgba(255, 255, 255, 0.8);
 }
 .about__title {
@@ -299,6 +298,7 @@ body {
 }
 .about__media-wrapper {
   position: relative;
+  top: -250px;
 }
 .about__media {
   position: relative;
@@ -310,16 +310,44 @@ body {
   width: 1440px;
   height: 1632px;
   left: 50%;
-  top: 50%;
+  top: calc(50% + 65px);
   transform: translate(-50%, -50%);
   background: url("../img/about-bg.svg") center no-repeat;
   border-radius: 50%;
   z-index: -1;
 }
+.about__media video {
+  width: 920px;
+}
+.about__crystall {
+  position: absolute;
+}
+.about__crystall--1 {
+  top: 244px;
+  right: 320px;
+  filter: blur(2px);
+}
+.about__crystall--2 {
+  bottom: 128px;
+  right: 150px;
+  filter: blur(1px);
+  transform: rotate(18.16deg);
+}
+.about__crystall--3 {
+  bottom: 270px;
+  left: 472px;
+  filter: blur(5px);
+}
+.about__crystall--4 {
+  left: 248px;
+  top: 450px;
+  filter: blur(2px);
+  transform: rotate(13.62deg);
+}
 .about__stat {
   position: absolute;
   right: 65px;
-  top: 180px;
+  top: 300px;
   font-family: "Dela Gothic One", sans-serif;
   line-height: 1.3;
 }
@@ -334,6 +362,7 @@ body {
 .integrations {
   padding-bottom: 204px;
   position: relative;
+  margin-top: -135px;
 }
 .integrations::after {
   position: absolute;
@@ -360,7 +389,7 @@ body {
   -webkit-backdrop-filter: blur(37.8544px);
           backdrop-filter: blur(37.8544px);
   border-radius: 14.4207px;
-  padding: 85px 138px 58px 150px;
+  padding: 85px 138px 58px 106px;
 }
 .integrations__content::before {
   position: absolute;
@@ -474,7 +503,6 @@ body {
 }
 .team__title {
   text-align: center;
-  margin-bottom: 135px;
 }
 .team__list {
   padding-top: 55px;
@@ -629,7 +657,7 @@ body {
   line-height: 1.4;
   text-align: center;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.73);
 }
 
@@ -681,11 +709,18 @@ body {
 @media screen and (max-width: 1024px) {
   .header {
     background-color: transparent;
+    padding: 15px 0;
   }
   .header__socials {
     margin-left: 0;
     margin-right: auto;
     order: -1;
+  }
+  .header__socials li {
+    margin: 0 8px;
+  }
+  .header__socials img {
+    width: 24px;
   }
   .header__burger {
     display: block;
@@ -702,7 +737,7 @@ body {
 }
 @media screen and (max-width: 900px) {
   .hero__inner {
-    padding-top: 60px;
+    padding-top: 55px;
   }
   .hero__media-item {
     width: 277px;
@@ -736,6 +771,13 @@ body {
 
   .page-wrapper::before {
     display: none;
+  }
+
+  .header__socials li {
+    margin: 0 7px;
+  }
+  .header__socials img {
+    width: 20px;
   }
 
   .hero__inner {
