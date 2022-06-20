@@ -1061,8 +1061,9 @@ body {
   .hero__media {
     display: flex;
     margin: 0;
-    padding-top: 100px;
     overflow: auto;
+    align-items: flex-end;
+    height: 470px;
   }
   .hero__btn {
     position: absolute;
