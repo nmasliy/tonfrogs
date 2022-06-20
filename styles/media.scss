@@ -390,6 +390,12 @@
       transform: none;
       margin: 0 30px;
       flex-shrink: 0;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
     }
     &__media-body {
       width: 100%;
@@ -540,6 +546,9 @@
       &::after {
         display: none;
       }
+      &::before {
+        top: 58%;
+      }
     }
     &__subrow {
       display: block;
@@ -580,6 +589,14 @@
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .hero {
+    &__btn {
+      right: auto;
+    }
+  }
+}
+
 @media screen and (max-width: 400px) {
   .integrations__title {
     font-size: 29px;
