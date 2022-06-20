@@ -101,6 +101,12 @@ body {
   margin: 0 28px;
   font-weight: 600;
 }
+.navigation a {
+  transition: color 0.3s ease;
+}
+.navigation a:hover {
+  color: #038aff;
+}
 
 .page-wrapper {
   position: relative;
@@ -585,11 +591,8 @@ body {
   display: flex;
 }
 .team__item {
-  display: flex;
-  flex-direction: column;
   position: relative;
   width: 200px;
-  height: 290px;
   margin: 64px 9px;
   background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
   -webkit-backdrop-filter: blur(18px);
@@ -597,13 +600,16 @@ body {
   border-radius: 7px;
 }
 .team__item-body {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 6px;
+  height: 240px;
+  position: relative;
 }
 .team__item-body video {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -35px;
   height: 335px;
+  max-width: none;
 }
 .team__item-footer {
   font-size: 10px;
@@ -611,7 +617,6 @@ body {
   padding: 11px 18px;
   background: rgba(8, 18, 26, 0.7);
   border-radius: 7px;
-  margin-top: auto;
   background-image: radial-gradient(circle at 100% 100%, transparent 8px, #0085ff 8px, #0085ff 10px, transparent 10px), linear-gradient(to right, #0085ff, #61c5ca), radial-gradient(circle at 0% 100%, transparent 8px, #61c5ca 8px, #61c5ca 10px, transparent 10px), linear-gradient(to bottom, #61c5ca, #61c5ca), radial-gradient(circle at 0% 0%, transparent 8px, #61c5ca 8px, #61c5ca 10px, transparent 10px), linear-gradient(to left, #61c5ca, #0085ff), radial-gradient(circle at 100% 0%, transparent 8px, #0085ff 8px, #0085ff 10px, transparent 10px), linear-gradient(to top, #0085ff, #0085ff);
   background-size: 10px 10px, calc(100% - 20px) 2px, 10px 10px, 2px calc(100% - 20px);
   background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left;
@@ -743,11 +748,13 @@ body {
     top: auto;
     bottom: 180px;
     z-index: 3;
+    transform: rotate(-15deg);
   }
   .hero__media-item--platinum {
     bottom: 95px;
     top: auto;
     right: 10%;
+    transform: rotate(15deg);
   }
 
   .about__stat {
@@ -945,25 +952,45 @@ body {
     top: 50%;
     background-size: 70%;
   }
+  .team__position {
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+  .team__name {
+    font-size: 19px;
+  }
   .team__subrow {
     justify-content: center;
+    width: 100%;
+  }
+  .team__item-footer {
+    padding: 20px 30px;
+  }
+  .team__row .team__item {
+    width: calc(50% - 18px);
   }
   .team__row:first-child {
     flex-direction: column;
     align-items: center;
     margin-bottom: 0;
   }
-  .team__row:first-child .team__item:first-child {
+  .team__row:first-child > .team__item:first-child {
     margin-bottom: 0;
   }
-  .team__row:nth-child(2) {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 62px 18px;
-    margin: 0;
-  }
   .team__row:nth-child(2) .team__item {
-    margin: 0;
+    margin: 64px 9px;
+  }
+  .team__item {
+    max-width: 365px;
+    width: calc(100% - 18px);
+    margin: 128px 9px;
+  }
+  .team__item-body {
+    height: 520px;
+  }
+  .team__item-body video {
+    height: 715px;
+    bottom: -60px;
   }
 
   .footer__policy {
@@ -1002,7 +1029,6 @@ body {
 @media screen and (max-width: 800px) {
   .main__title {
     font-size: 36px;
-    word-break: break-word;
   }
   .main__text {
     font-size: 16px;
@@ -1128,6 +1154,10 @@ body {
   }
 }
 @media screen and (max-width: 700px) {
+  [data-aos-delay] {
+    transition-delay: 0.1s !important;
+  }
+
   .integrations__title {
     margin-bottom: 32px;
   }
@@ -1162,6 +1192,30 @@ body {
     margin-bottom: 32px;
   }
 
+  .team__title {
+    margin-bottom: 127px;
+    text-align: left;
+  }
+  .team .team__row {
+    display: block;
+    margin: 0;
+  }
+  .team .team__row:first-child > .team__item:first-child {
+    margin-bottom: 145px;
+  }
+  .team .team__row .team__item {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 145px;
+  }
+  .team__list::after {
+    display: none;
+  }
+  .team__subrow {
+    display: block;
+  }
+
   .footer {
     padding-top: 30px;
     padding-bottom: 24px;
@@ -1194,16 +1248,8 @@ body {
     text-align: center;
   }
 }
-@media screen and (max-width: 450px) {
-  .team .team__row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .team__list::after {
-    display: none;
-  }
-  .team__subrow {
-    flex-direction: column;
+@media screen and (max-width: 400px) {
+  .integrations__title {
+    font-size: 29px;
   }
 }/*# sourceMappingURL=style.css.map */

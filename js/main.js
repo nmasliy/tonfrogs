@@ -76,7 +76,7 @@ window.addEventListener("DOMContentLoaded", function () {
   function initCounter() {
     const box = document.querySelector(".about__text");
     const time = 500;
-    const step = 5;
+    const step = 55;
     let isInit = false;
 
     function isElementCompletelyInViewPort(element) {
