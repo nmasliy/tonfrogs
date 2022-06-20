@@ -163,6 +163,7 @@ body {
   &__media {
     position: relative;
     text-align: center;
+    --scale: 0.2;
     &::before {
       position: absolute;
       content: "";
@@ -170,11 +171,11 @@ body {
       height: 1632px;
       left: 50%;
       top: calc(50% + 65px);
-      transform: translate(-50%, -50%) scale(0.2);
+      transform: translate(-50%, -50%) scale(var(--scale));
       background: url("../img/about-bg.svg") center no-repeat;
       border-radius: 50%;
       z-index: -1;
-      transition: 1.3s ease;
+      transition: 1s ease;
     }
     video {
       width: 920px;
@@ -451,6 +452,7 @@ body {
   &__list {
     padding-top: 55px;
     position: relative;
+    --scale: 0.2;
     &::before {
       position: absolute;
       content: "";
@@ -458,11 +460,11 @@ body {
       height: 1632px;
       left: 50%;
       top: calc(50% - 63px);
-      transform: translate(-50%, -50%) scale(0.2);
+      transform: translate(-50%, -50%) scale(var(--scale));
       background: url("../img/about-bg.svg") center no-repeat;
       border-radius: 50%;
       z-index: -1;
-      transition: 1.5s ease;
+      transition: 1s ease;
     }
     &::after {
       position: absolute;

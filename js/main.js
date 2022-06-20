@@ -117,36 +117,92 @@ window.addEventListener("DOMContentLoaded", function () {
     var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 
     if ("IntersectionObserver" in window) {
-      var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(video) {
+      var lazyVideoObserver = new IntersectionObserver(function (
+        entries,
+        observer
+      ) {
+        entries.forEach(function (video) {
           if (video.isIntersecting) {
             for (var source in video.target.children) {
               var videoSource = video.target.children[source];
-              if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+              if (
+                typeof videoSource.tagName === "string" &&
+                videoSource.tagName === "SOURCE"
+              ) {
                 videoSource.src = videoSource.dataset.src;
               }
             }
-  
+
             video.target.load();
             video.target.classList.remove("lazy");
             lazyVideoObserver.unobserve(video.target);
           }
         });
       });
-  
-      lazyVideos.forEach(function(lazyVideo) {
+
+      lazyVideos.forEach(function (lazyVideo) {
         lazyVideoObserver.observe(lazyVideo);
       });
     }
+  }
+
+  function initParallaxCircles() {
+    const items = document.querySelectorAll(".circle-parallax");
+
+    items.forEach((element) => {
+      let pos = element.getBoundingClientRect().y;
+      let count = 0;
+
+      window.addEventListener("scroll", scroll);
+      window.addEventListener("resize", scroll);
+      scroll();
+
+      function scroll(e) {
+        var r = element.getBoundingClientRect();
+        console.log("pos: " + pos + " now: " + r.y);
+        let result = 0;
+
+        if (r.y > 0 && r.y <= 800) {
+          if (r.y < pos) {
+            console.log("+идем вниз");
+            count += 2;
+          } else {
+            console.log("+идем вверх");
+            count--;
+          }
+        } else if (r.y < 0 && r.y >= -800) {
+          if (r.y < pos) {
+            console.log("-идем вниз");
+            count--;
+          } else {
+            console.log("-идем вверх");
+            count += 2;
+          }
+        } else {
+          count = 0;
+        }
+        console.log("count: " + count);
+
+        result = (count * 1.5) / 100;
+
+        if (result > 1) result = 1;
+        else if (result < 0) result = 0.2;
+
+        element.style.setProperty("--scale", result);
+
+        pos = r.y;
+      }
+    });
   }
 
   initMenu();
   initScrollToBlock();
   initCounter();
   initLazyLoadVideos();
+  initParallaxCircles();
   const da = new DynamicAdapt("max");
   da.init();
   AOS.init({
-    duration:1000
+    duration: 1000,
   });
 });
