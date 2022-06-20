@@ -15,10 +15,7 @@
       content="TON Frogs NFT collection based on The Open Network Blockchain, includes 5 555 unique items"
     />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="img/og-image.png"
-    />
+    <meta property="og:image" content="img/og-image.png" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
@@ -26,7 +23,11 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/style.css" />
-    <link href="css/media.css" rel="stylesheet" media="screen and (max-width: 1200px)">
+    <link
+      href="styles/media.css"
+      rel="stylesheet"
+      media="screen and (max-width: 1200px)"
+    />
     <title>Tonfrog</title>
   </head>
   <body>
@@ -246,13 +247,21 @@
               >
                 <video
                   width="920"
-                  src="video/faraon_600_chrome.webm"
                   poster="img/faraon.webp"
                   muted
                   autoplay
                   playsinline
                   loop
-                ></video>
+                >
+                  <source
+                    src="video/faraon_600_safari.mp4"
+                    type='video/mp4; codecs="hvc1"'
+                  />
+                  <source
+                    src="video/faraon_600_chrome.webm"
+                    type="video/webm"
+                  />
+                </video>
               </div>
               <div class="about__stat" data-da=".about__inner, 800, 3">
                 <strong id="items-count">5 555</strong>
