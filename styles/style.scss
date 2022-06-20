@@ -37,7 +37,7 @@ body {
   }
   &.aos-animate {
     &::before {
-      transform: translateY(-50%, -50%);
+      transform: translate(-50%, -50%);
     }
   }
 }
@@ -423,7 +423,7 @@ body {
       background: url("../img/about-bg.svg") center no-repeat;
       border-radius: 50%;
       z-index: -1;
-      transition: 1s ease;
+      transition: 1.3s ease;
     }
     video {
       width: 920px;
