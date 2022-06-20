@@ -1,17 +1,9 @@
 <svg width="372" height="519" viewBox="0 0 372 519" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_b_429_323)">
-<rect x="2.0332" y="1.99219" width="367.923" height="515.093" rx="12.756" fill="url(#paint0_diamond_429_323)" fill-opacity="0.5"/>
+<rect x="1.23595" y="1.19494" width="369.518" height="516.687" rx="13.5532" fill="url(#paint0_diamond_429_323)" fill-opacity="0.5"/>
 <rect x="1.23595" y="1.19494" width="369.518" height="516.687" rx="13.5532" stroke="url(#paint1_radial_429_323)" stroke-width="1.5945"/>
 <rect x="1.23595" y="1.19494" width="369.518" height="516.687" rx="13.5532" stroke="url(#paint2_radial_429_323)" stroke-opacity="0.5" stroke-width="1.5945"/>
 <rect x="1.23595" y="1.19494" width="369.518" height="516.687" rx="13.5532" stroke="url(#paint3_radial_429_323)" stroke-width="1.5945"/>
-</g>
 <defs>
-<filter id="filter0_b_429_323" x="-33.045" y="-33.087" width="438.08" height="585.251" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feGaussianBlur in="BackgroundImage" stdDeviation="16.7422"/>
-<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_429_323"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_429_323" result="shape"/>
-</filter>
 <radialGradient id="paint0_diamond_429_323" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(185.995 259.539) rotate(54.4623) scale(316.5 226.071)">
 <stop stop-color="#CDCDCD"/>
 <stop offset="1" stop-color="#ABABAB" stop-opacity="0"/>
