@@ -218,8 +218,8 @@
         flex-direction: column;
         position: relative;
         border-radius: 13px;
-        width: 371px;
-        height: 517px;
+        width: 373px;
+        height: 518px;
         background: url("img/card-border.svg") center no-repeat;
         backdrop-filter: blur(4px);
       }
@@ -228,21 +228,9 @@
         z-index: 3;
         position: relative;
       }
-      .hero__media-item--gold::before {
-        position: absolute;
-        content: "";
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 379px;
-        height: 350px;
-        background: url("img/diamond-bg-2.svg") center no-repeat;
-        z-index: -1;
-        filter: blur(12px);
-      }
       .hero__media-item--silver {
         background-image: url("img/card-silver.svg");
-        width: 373px;
+        width: 374px;
         height: 520px;
         position: absolute;
         right: 185px;
@@ -253,7 +241,7 @@
       .hero__media-item--platinum {
         position: absolute;
         height: 516px;
-        width: 369px;
+        width: 371px;
         background-image: url("img/card-platinum.svg");
         right: 185px;
         top: 160px;
@@ -271,32 +259,11 @@
         z-index: 5;
         max-width: none;
       }
-      .hero__media-footer {
-        position: relative;
-        z-index: 4;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgba(8, 18, 26, 0.7);
-        border-radius: 13px;
-        padding: 18px 33px;
-        border: 3px solid #0085ff;
-        margin-top: auto;
-      }
-      .hero__media-name {
-        font-family: "Dela Gothic One", sans-serif;
-        font-size: 19px;
-        line-height: 1.3;
-        text-transform: uppercase;
-      }
-      .hero__media-icon {
-        margin-left: 20px;
-      }
       @media screen and (max-width: 900px) {
         .hero__media-body video {
           bottom: 40px;
-          width: 440px;
+          /* width: 440px; */
+          width: 260px;
           max-width: none;
         }
       }
@@ -417,12 +384,6 @@
                       />
                     </video>
                   </div>
-                  <div class="hero__media-footer">
-                    <div class="hero__media-name">Ton frogs</div>
-                    <div class="hero__media-icon">
-                      <img src="img/ton.svg" alt="toncoin" />
-                    </div>
-                  </div>
                 </div>
                 <div
                   class="hero__media-item hero__media-item--silver"
@@ -450,12 +411,6 @@
                       />
                     </video>
                   </div>
-                  <div class="hero__media-footer">
-                    <div class="hero__media-name">Ton frogs</div>
-                    <div class="hero__media-icon">
-                      <img src="img/ton.svg" alt="toncoin" />
-                    </div>
-                  </div>
                 </div>
                 <div
                   class="hero__media-item hero__media-item--platinum"
@@ -482,12 +437,6 @@
                         type="video/webm"
                       />
                     </video>
-                  </div>
-                  <div class="hero__media-footer">
-                    <div class="hero__media-name">Ton frogs</div>
-                    <div class="hero__media-icon">
-                      <img src="img/ton.svg" alt="toncoin" />
-                    </div>
                   </div>
                 </div>
               </div>
