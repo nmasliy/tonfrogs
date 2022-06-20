@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         const selector = item.getAttribute("href");
         const section = document.querySelector(selector);
-        window.scrollTo(0, section.getBoundingClientRect().top);
+        window.scrollTo(0, section.getBoundingClientRect().top - 50);
       });
     });
   }
