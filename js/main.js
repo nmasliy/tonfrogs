@@ -159,34 +159,45 @@ window.addEventListener("DOMContentLoaded", function () {
 
       function scroll(e) {
         var r = element.getBoundingClientRect();
-        console.log("pos: " + pos + " now: " + r.y);
         let result = 0;
+        let start = -900;
+        let end = 900;
 
-        if (r.y > 0 && r.y <= 800) {
-          if (r.y < pos) {
-            console.log("+идем вниз");
-            count += 2;
-          } else {
-            console.log("+идем вверх");
-            count--;
-          }
-        } else if (r.y < 0 && r.y >= -800) {
-          if (r.y < pos) {
-            console.log("-идем вниз");
-            count--;
-          } else {
-            console.log("-идем вверх");
-            count += 2;
-          }
-        } else {
-          count = 0;
+        function getOffset(el) {
+          const rect = el.getBoundingClientRect();
+          return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY
+          };
         }
-        console.log("count: " + count);
 
-        result = (count * 1.5) / 100;
+        if (r.y > 0 && r.y <= end) {
+          
+          let dis = (getOffset(element).top - window.scrollY) / 100
+          if (dis < 2) {
+            result = 1;
+          }
+          else if (dis < 4) {
+            result = 0.8;
+          } else if (dis < 7) {
+            result = 0.5;
+          } else {
+            result = 0.3;
+          }
 
-        if (result > 1) result = 1;
-        else if (result < 0) result = 0.2;
+        } else if (r.y < 0 && r.y >= start) {
+            let dis = ( window.scrollY - getOffset(element).top ) /  100
+            if (dis < 2) {
+              result = 1;
+            }
+            else if (dis < 4) {
+              result = 0.8;
+            } else if (dis < 7) {
+              result = 0.5;
+            } else {
+              result = 0.3;
+            }
+        } 
 
         element.style.setProperty("--scale", result);
 
@@ -195,11 +206,23 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function fixBackdropSafariBug() {
+    const $items = document.querySelectorAll('.hero__media-item');
+    $items.forEach(el => {
+      setTimeout(() => {
+        el.style.display = "table";
+        el.offsetHeight;
+        el.style.display = "block";
+      });
+    })
+  }
+
   initMenu();
   initScrollToBlock();
   initCounter();
   initLazyLoadVideos();
   initParallaxCircles();
+  fixBackdropSafariBug();
   const da = new DynamicAdapt("max");
   da.init();
   AOS.init({
