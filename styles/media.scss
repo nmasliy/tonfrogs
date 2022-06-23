@@ -527,19 +527,32 @@
       margin-bottom: 127px;
       text-align: left;
     }
+    &__item-footer {
+      padding: 20px;
+    }
+    &__name {
+      font-size: 11px;
+    }
+    &__item-body {
+      height: 250px;
+      video {
+        height: 370px;
+        bottom: -45px;
+      }
+    }
     .team__row {
       display: block;
       margin: 0;
       &:first-child > .team__item:first-child {
-        margin-bottom: 145px;
+        margin-bottom: 75px;
       }
     }
     .team__row {
       .team__item {
-        max-width: 100%;
+        max-width: 220px;
         width: 100%;
-        margin: 0;
-        margin-bottom: 145px;
+        margin: 0 auto;
+        margin-bottom: 75px;
       }
     }
     &__list {
